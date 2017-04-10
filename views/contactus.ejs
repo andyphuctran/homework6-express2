@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <form action="/contactusController" method="POST">
+        Full name: <input type="text" id="fullname" name="fullname" /></br><br> Type:
+        <select name="type">
+            <option value="suggestion">suggestion</option>
+            <option value="complaint">complaint</option>
+        </select><br><br>
+        <textarea cols="40" rows="10" id="message" name="message"></textarea><br><br>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <input type="submit">
+    </form>
+</body>
+
+</html>
